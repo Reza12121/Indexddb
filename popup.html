@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+
+        #fullscreenButton {
+            position: relative;
+            height: 50px;
+            bottom: 225px;
+        }
+
+        #playButton {
+            position: relative;
+            height: 50px;
+            bottom: 225px;
+        }
+
+        #surveyLink {
+            background-color: white;
+            position: relative;
+            bottom: 200px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <video style="pointer-events: none;" src="#" id="video"></video>
+    <button id="fullscreenButton">Fullscreen</button>
+    <button id="playButton">Play Video</button>
+    <a href="#" id="surveyLink">click me</a>
+
+    <script>
+        const video = document.getElementById("video");
+        const fullscreenButton = document.getElementById("fullscreenButton");
+        const playButton = document.getElementById("playButton");
+        const surveyLink = document.getElementById("surveyLink");
+
+        const urlList = [
+            'vid0.mp4'
+            //'https://survey-webserver-reza.s3.amazonaws.com/QS/GTA_QS.mp4',
+        ];
+
+        async function download(url) {
+            const response = await fetch(url);
+            return response.blob();
+        }
+
+        function displayVideo(index) {
+            blobJobs[index]?.then(blob => {
+                video.src = URL.createObjectURL(blob);
+            });
+        }
+
+        function hide(el) {
+            el.style.display = 'none';
+        }
+        function show(el) {
+            el.style.display = 'unset';
+        }
+
+        // load the videos
+        const blobJobs = [];
+        for (const url of urlList) {
+            blobJobs.push(download(url));
+        }
+
+        // display the first video
+        let index = 0;
+        displayVideo(index++);
+        video.addEventListener('pause', function () {
+            show(surveyLink);
+        });
+
+        playButton.addEventListener('click', function () {
+            hide(playButton);
+            video.play();
+        });
+
+        surveyLink.addEventListener('click', function () {
+            document.exitFullscreen()
+                .then(function () { })
+                .catch(function (error) { });
+        });
+
+        hide(playButton);
+        hide(surveyLink);
+        fullscreenButton.addEventListener('click', function () {
+            document.body.requestFullscreen()
+                .then(function () {
+                    hide(fullscreenButton);
+                    show(playButton);
+                })
+                .catch(function (error) {
+                    // tell user they must fullscreen?
+                });
+        });
+
+        addEventListener('fullscreenchange', (event) => {
+            console.log(document.fullscreen);
+         });
+    </script>
+</body>
+
+</html>
