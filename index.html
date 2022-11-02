@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,34 +9,68 @@
     <link rel="stylesheet" href="index.css">
 
     <script src="index.js" type="module"></script>
+
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            border: 1px solid black;
+        }
+
+        #play-video {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            bottom: 225px;
+        }
+
+        #survey-link {
+            background-color: white;
+            position: relative;
+            bottom: 200px;
+            padding: 10px;
+        }
+    </style>
 </head>
+
 <body>
     <center>
-    <h2>Step 1</h2>
-    <p>
-       Answer the survey: <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMkWbULbp74L-qpzv0wdrSoRfBng848hgj0YuuOA3AZSY5Sg/viewform?usp=sf_link" target="_blank">Survey Link</a>
-    </p>
-    <br>
-    <h2>Step 2</h2>
-    <p>
-        Watch the video (Once only, and preferably in full screen)
-     </p>
-     <br>
-    <div class="wrapper">
-        <video src="#" id="video" controls></video>
-    </div>
-        <button id="next-video">Next Video</button>
+        <h2>Step 1</h2>
+        <p>
+            Answer the survey: <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeMkWbULbp74L-qpzv0wdrSoRfBng848hgj0YuuOA3AZSY5Sg/viewform?usp=sf_link"
+                target="_blank">Survey Link</a>
+        </p>
+        <br>
+        <h2>Step 2</h2>
+        <p>
+            Watch the video (Once only, and preferably in full screen)
+        </p>
+        <br>
+        <div class="wrapper">
+            <video style="pointer-events: none;" src="#" id="video"></video>
+            <button id="play-video">Play</button>
+            <a href="#" id="survey-link">click me</a>
+        </div>
 
-    <!DOCTYPE html>
-    <br>
-      <h2>Step 3</h2>
-      <p>
-         Answer the survey: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfczZqsvkeCjgP-yR1FaGMzp5UsSHek0p2BIlbKSCGpspLffQ/viewform?usp=sf_link" target="_blank">Survey Link</a>
-      </p>
-      <br>
-      <br>
-      <h4>Thanks for participating!</h4>
+        <!DOCTYPE html>
+        <br>
+        <h2>Step 3</h2>
+        <p>
+            Answer the survey: <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfczZqsvkeCjgP-yR1FaGMzp5UsSHek0p2BIlbKSCGpspLffQ/viewform?usp=sf_link"
+                target="_blank">Survey Link</a>
+        </p>
+        <br>
+        <br>
+        <h4>Thanks for participating!</h4>
     </center>
-
 </body>
+
 </html>
