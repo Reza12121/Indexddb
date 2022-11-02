@@ -2,8 +2,9 @@ const elVideo = document.getElementById("video");
 const buttonNextVideo = document.getElementById('next-video');
 
 const urlList = [
-    'vid0.mp4',
-    'vid1.mp4',
+    'https://survey-webserver-reza.s3.amazonaws.com/QS/GTA_QS.mp4',
+    'https://survey-webserver-reza.s3.amazonaws.com/QS/LOL_QS.mp4',
+    'https://survey-webserver-reza.s3.amazonaws.com/QS/Valorant-QS.mp4',
 ];
 
 async function download(url) {
