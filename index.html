@@ -8,7 +8,7 @@
     <title>Your fav video</title>
     <link rel="stylesheet" href="index.css">
 
-    <script src="index.js" type="module"></script>
+    <!-- <script src="index.js" type="module"></script> -->
 
     <style>
         .wrapper {
@@ -51,13 +51,10 @@
         <h2>Step 2</h2>
         <p>
             Watch the video (Once only, and preferably in full screen)
+            <br>
+            <button id="watchVideoButton">Watch Video</button>
         </p>
         <br>
-        <div class="wrapper">
-            <video style="pointer-events: none;" src="#" id="video"></video>
-            <button id="play-video">Play</button>
-            <a href="#" id="survey-link">click me</a>
-        </div>
 
         <!DOCTYPE html>
         <br>
@@ -71,6 +68,11 @@
         <br>
         <h4>Thanks for participating!</h4>
     </center>
+    <script>
+        watchVideoButton.addEventListener('click', function () {
+            window.open("./popup.html", "_blank", { popup: true })
+        });
+    </script>
 </body>
 
 </html>
