@@ -1,54 +1,29 @@
-"use strict";
+const elVideo = document.getElementById("video");
+const buttonNextVideo = document.getElementById('next-video');
 
-const page = "home";
-const openRequest = indexedDB.open("videos", 1);
+const urlList = [
+    'vid0.mp4',
+    'vid1.mp4',
+];
 
-openRequest.addEventListener("upgradeneeded", function (event) {
-	let db = openRequest.result;
-	if (!db.objectStoreNames.contains("video")) {
-		db.createObjectStore("video", { keyPath: "page" });
-	}
-});
-
-let dataBase;
-openRequest.addEventListener("success", () => {
-	dataBase = openRequest.result;
-
-	let transaction = dataBase.transaction("video", "readonly");
-	let objStore = transaction.objectStore("video");
-
-	const data = objStore.get(page);
-	data.addEventListener("success", () => {
-		if (data.result) {
-			showVid(data.result.blob);
-		} else {
-			addVidToDatabase();
-		}
-	});
-
-	dataBase.addEventListener("error", function (event) {
-		let request = event.target;
-
-		console.log("Error", request.error);
-	});
-});
-
-async function addVidToDatabase() {
-	const res = await fetch("./vid.mp4");
-	const blob = await res.blob();
-
-	const obj = {
-		blob,
-		page,
-	};
-
-	let transaction = dataBase.transaction("video", "readwrite");
-	let objStore = transaction.objectStore("video");
-	objStore.add(obj);
-
-	showVid(blob);
+async function download(url) {
+    const response = await fetch(url);
+    return response.blob();
 }
 
-function showVid(vid) {
-	document.getElementById("video").src = URL.createObjectURL(vid);
+const blobJobs = [];
+for (const url of urlList) {
+    blobJobs.push(download(url));
 }
+
+function playVideo(index) {
+    blobJobs[index]?.then(blob => {
+        elVideo.src = URL.createObjectURL(blob);
+    });
+}
+
+let index = 0;
+buttonNextVideo.addEventListener('click', function () {
+    playVideo(index++);
+});
+playVideo(index++);
