@@ -1,5 +1,6 @@
 const elVideo = document.getElementById("video");
-const buttonNextVideo = document.getElementById('next-video');
+const buttonNextVideo = document.getElementById('play-video');
+const elSurveyLink = document.getElementById('survey-link');
 
 const urlList = [
     'https://survey-webserver-reza.s3.amazonaws.com/QS/GTA_QS.mp4',
@@ -8,23 +9,33 @@ const urlList = [
 ];
 
 async function download(url) {
-    const response = await fetch(url);
-    return response.blob();
+	const response = await fetch(url);
+	return response.blob();
 }
 
+function displayVideo(index) {
+	blobJobs[index]?.then(blob => {
+		elVideo.src = URL.createObjectURL(blob);
+	});
+}
+
+// load the videos
 const blobJobs = [];
 for (const url of urlList) {
-    blobJobs.push(download(url));
+	blobJobs.push(download(url));
 }
 
-function playVideo(index) {
-    blobJobs[index]?.then(blob => {
-        elVideo.src = URL.createObjectURL(blob);
-    });
-}
-
+// display the first video
+elSurveyLink.style.display = 'none';
 let index = 0;
-buttonNextVideo.addEventListener('click', function () {
-    playVideo(index++);
+displayVideo(index++);
+elVideo.addEventListener('pause', function () {
+	elSurveyLink.style.removeProperty('display');
 });
-playVideo(index++);
+
+buttonNextVideo.addEventListener('click', function () {
+	// hide the problem
+	buttonNextVideo.style.display = 'none';
+	// play the video
+	elVideo.play();
+});
