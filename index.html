@@ -46,6 +46,96 @@
 
                 <form>
                     <!-- put form stuff here -->
+			<div id="outside">
+<form id="survey-form" action="/my-handling-form-page" method="post">
+  <h1 id="title">Demographic Survey</h1>
+  <p id="description"><b>Instruction:</b> Thank you for participating in the game streaming survey campaign. A survey study conducted to determine the game streaming QoE based on stall events and quality switching. We have designed three campaigns: Quality Switching vs. Stall Events QvS, Short Stalls vs. Long Stalls (SSvsLS), and Quality Switching (QS). The first step in the process is to fill out a few general questions (Demographic Survey), step two is to watch the stream for thirty to sixty seconds, and last step is to answer 3-4 questions related to the video streamed.
+    <br>Additionally, by doing the following demographic survey, you have read and agree to the terms & conditions of <a href="url">The Consent Terms</a>.</p>
+
+    <!-- --------Questionares Starts from Here--------------- -->
+  <fieldset>
+      <div><p>
+      <label for="Gunfire">What is your current age?<br/>
+</label>
+      <p>
+        <input type="radio" name="age" value="1"> Under 18<br>
+        <input type="radio" name="age" value="2"> 18-24<br>
+        <input type="radio" name="age" value="1"> 25-29<br>
+        <input type="radio" name="age" value="2"> 30-34<br>
+        <input type="radio" name="age" value="1"> 35-39<br>
+        <input type="radio" name="age" value="2"> Above 40<br>
+      </p>
+    </div>
+  </fieldset>
+  
+  <fieldset>
+      <div><p>
+      <label for="Gunfire">What is your gender?<br/>
+</label>
+      <p>
+        <input type="radio" name="gender" value="1"> Male<br>
+        <input type="radio" name="gender" value="2"> Female<br>
+        <input type="radio" name="gender" value="2"> Prefer not to say<br>
+      </p>
+    </div>
+  </fieldset>
+  
+    <fieldset>
+      <div><p>
+      <label for="Gunfire">Have you ever watched game streaming from Twitch or Youtube?<br/>
+</label>
+      <p>
+        <input type="radio" name="stream" value="1"> Yes<br>
+        <input type="radio" name="stream" value="2"> No<br>
+      </p>
+    </div>
+  </fieldset>
+  
+    <fieldset>
+      <div><p>
+      <label for="Gunfire">How many hours do you spend watching video games streaming in a week?<br/>
+</label>
+      <p>
+        <input type="radio" name="gun" value="1"> Everyday<br>
+        <input type="radio" name="gun" value="2"> More than 2 or 3 times a week<br>
+        <input type="radio" name="gun" value="2"> More than 2 or 3 times a month<br>
+        <input type="radio" name="gun" value="2"> Never<br>
+      </p>
+    </div>
+  </fieldset>
+  
+    <fieldset>
+      <div><p>
+      <label for="Gunfire">What types of games do you typically play or watch?<br/>
+</label>
+      <p>
+        <input type="radio" name="game" value="1"> First-Person Shooters (FPS)<br>
+        <input type="radio" name="game" value="2"> Adventure/Story-Driven<br>
+        <input type="radio" name="game" value="2"> Role-Playing Games (RPG)<br>
+        <input type="radio" name="game" value="1"> Real-Time Strategy (RTS)<br>
+        <input type="radio" name="game" value="2"> Multiplayer Online Battle Arena (MOBA)<br>
+        <input type="radio" name="game" value="2"> Casual/Mobile Games<br>
+      </p>
+    </div>
+  </fieldset>
+  
+  <fieldset>
+      <div>
+      <label for="Gunfire">How much experience do you have with cloud-based game streaming?<br/>
+</label> <small>i.e. Twitch, GeForce Now, Playstation Now</small></p>
+      <p>
+        <input type="radio" name="gun" value="1"> A lot<br>
+        <input type="radio" name="gun" value="2"> Some<br>
+        <input type="radio" name="gun" value="2"> None<br>
+      </p>
+    </div>
+</fieldset>
+  <div id="submitbutton">
+    <button type="submit" id="submit">Next Step</button>   </div>
+
+</form>
+  </div>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
                 </form>
 
                 <button id="general-survey-continue">Continue</button>
