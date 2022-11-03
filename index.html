@@ -60,7 +60,72 @@
                 <p>Survey</p>
 
                 <form>
-                    codes for form 
+                    <div id="outside">
+<form id="survey-form" action="/my-handling-form-page" method="post">
+  <h1 id="title">Short Stall vs Long Stall Evaluation</h1>
+  <p id="description"><b>Note:</b> Answer the following questions based on the video you have just viewed</p>
+
+    <!-- --------Questionares Starts from Here--------------- -->
+  <fieldset>
+    <div>
+      <label for="Rate">How was your experience in watching the previous video?
+<div class="range">
+	<span class="prefix-tag">
+		Bad
+	</span>
+	<label>
+		<span>1</span>
+		<input type="radio" name="group" value="1" />
+	</label>
+	<label>
+		<span>2</span>
+		<input type="radio" name="group" value="2" />
+	</label>
+	<label>
+		<span>3</span>
+		<input type="radio" name="group" value="3" />
+	</label>
+	<label>
+		<span>4</span>
+		<input type="radio" name="group" value="4" />
+	</label>
+	<label>
+		<span>5</span>
+		<input type="radio" name="group" value="5" />
+	</label>
+	<span class="suffix-tag">
+		Excelent
+	</span>
+</div>
+  </fieldset>
+  
+  <fieldset>
+      <div><p>
+      <label for="Gunfire">Was the stall event acceptable?<br/>
+</label> <small>i.e. would you continue to watch longer with with the same stall event pattern?</small></p>
+      <p>
+        <input type="radio" name="gun" value="1"> Yes<br>
+        <input type="radio" name="gun" value="2"> No<br>
+      </p>
+    </div>
+  </fieldset>
+  
+  <fieldset>
+      <div>
+      <label for="Gunfire">Were there any gunfire?<br>
+</label> 
+      <p>
+        <input type="radio" name="gun" value="1"> Yes<br>
+        <input type="radio" name="gun" value="2"> No<br>
+      </p>
+    </div>
+</fieldset>
+  <div id="submitbutton">
+    <button type="submit" id="submit">Submit Survey</button>   </div>
+
+</form>
+  </div>
+ 
                 </form>
 
                 <button id="submit-survey">Submit</button>
