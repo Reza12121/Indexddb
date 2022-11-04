@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your fav video</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+  <script src="./index.js" type="module"></script>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <left>
+    <div id="survey-container">
+      <article id="general-survey">
+        <h1>Demographic Survey</h1>
+        <p>
+          <b>Instruction:</b> Thank you for participating in the game streaming survey campaign. A survey study
+          conducted to determine the game streaming QoE based on stall events and quality switching. We have designed
+          three campaigns: Quality Switching vs. Stall Events QvS, Short Stalls vs. Long Stalls (SSvsLS), and Quality
+          Switching (QS). The first step in the process is to fill out a few general questions (Demographic Survey),
+          step two is to watch the stream for thirty to sixty seconds, and last step is to answer 3-4 questions related
+          to the video streamed.
+        </p>
+        <p>
+          <b>Additionally</b>, by doing the following demographic survey, you have read and agree to the terms &
+          conditions of <a href="url" target="_blank">The Consent Terms</a>.
+        </p>
+        <!-- --------Questionares Starts from Here--------------- -->
+        <form id="survey-1" action="/my-handling-form-page" method="post">
+          <fieldset class="options-list">
+            <div class="description">
+              <label for="age">What is your current age?</label>
+            </div>
+            <label for="age1"><input type="radio" id="age1" name="age" value="1">Under 18</label>
+            <label for="age2"><input type="radio" id="age2" name="age" value="2">18-24</label>
+            <label for="age3"><input type="radio" id="age3" name="age" value="3">25-29</label>
+            <label for="age4"><input type="radio" id="age4" name="age" value="4">30-34</label>
+            <label for="age5"><input type="radio" id="age5" name="age" value="5">35-39</label>
+            <label for="age6"><input type="radio" id="age6" name="age" value="6">Above 40</label>
+          </fieldset>
+
+          <fieldset class="options-list">
+            <div class="description">
+              <label for="gender">What is your gender?</label>
+            </div>
+            <label for="gender1"><input type="radio" id="gender1" name="gender" value="1">Male</label>
+            <label for="gender2"><input type="radio" id="gender2" name="gender" value="2">Female</label>
+            <label for="gender3"><input type="radio" id="gender3" name="gender" value="3">Prefer not to say</label>
+          </fieldset>
+
+          <fieldset class="options-list">
+            <div class="description">
+              <label for="stream">Have you ever watched game streaming from Twitch or Youtube?</label>
+            </div>
+            <label for="stream1"><input type="radio" id="stream1" name="stream" value="1">Yes</label>
+            <label for="stream2"><input type="radio" id="stream2" name="stream" value="2">No</label>
+          </fieldset>
+
+          <fieldset class="options-list">
+            <div class="description">
+              <label for="gun">How many hours do you spend watching video games streaming in a week?</label>
+            </div>
+            <label for="gun1"><input type="radio" id="gun1" name="gun" value="1">Everyday</label>
+            <label for="gun2"><input type="radio" id="gun2" name="gun" value="2">More than 2 or 3 times a week</label>
+            <label for="gun3"><input type="radio" id="gun3" name="gun" value="3">More than 2 or 3 times a month</label>
+            <label for="gun4"><input type="radio" id="gun4" name="gun" value="4">Never</label>
+          </fieldset>
+
+          <fieldset class="options-list">
+            <div class="description">
+              <label for="game">What types of games do you typically play or watch?</label>
+            </div>
+            <label for="game1"><input type="radio" id="game1" name="game" value="1">First-Person Shooters (FPS)</label>
+            <label for="game2"><input type="radio" id="game2" name="game" value="2">Adventure/Story-Driven</label>
+            <label for="game3"><input type="radio" id="game3" name="game" value="3">Role-Playing Games (RPG)</label>
+            <label for="game4"><input type="radio" id="game4" name="game" value="4">Real-Time Strategy (RTS)</label>
+            <label for="game5"><input type="radio" id="game5" name="game" value="5">Multiplayer Online Battle Arena (MOBA)</label>
+            <label for="game6"><input type="radio" id="game6" name="game" value="6">Casual/Mobile Games</label>
+          </fieldset>
+
+          <fieldset class="options-list">
+            <div class="description">
+              <label for="cloud">
+                How much experience do you have with cloud-based game streaming?<br>
+                <small>i.e. Twitch, GeForce Now, Playstation Now</small>
+              </label>
+            </div>
+            <label for="cloud1"><input type="radio" id="cloud1" name="cloud" value="1">A lot</label>
+            <label for="cloud2"><input type="radio" id="cloud2" name="cloud" value="2">Some</label>
+            <label for="cloud3"><input type="radio" id="cloud3" name="cloud" value="3">None</label>
+          </fieldset>
+
+          <button type="button" id="general-survey-continue">Continue</button>
+        </form>
+      </article>
+
+      <article id="video-screen">
+        <p>Please note, by clicking the following button, you will automatically switch to fullscreen</p>
+        <form>
+          <button type="button" id="watch-video">Watch the Stream</button>
+        </form>
+      </article>
+
+      <article id="video-survey">
+        <h1>Short Stall vs Long Stall Evaluation</h1>
+        <p>
+          <b>Note:</b> Answer the following questions based on the video you have just viewed.
+        </p>
+        <!-- --------Questionares Starts from Here--------------- -->
+        <form id="survey-2" action="/my-handling-form-page" method="post">
+          <fieldset class="options-range">
+            <div class="description">
+              <label for="experience">How was your experience in watching the previous video?</label>
+            </div>
+            <div class="row">
+              <span>Poor</span>
+              <label for="experience1">1<input type="radio" id="experience1" name="experience" value="1"></label>
+              <label for="experience2">2<input type="radio" id="experience2" name="experience" value="2"></label>
+              <label for="experience3">3<input type="radio" id="experience3" name="experience" value="3"></label>
+              <label for="experience4">4<input type="radio" id="experience4" name="experience" value="4"></label>
+              <label for="experience5">5<input type="radio" id="experience5" name="experience" value="5"></label>
+              <span>Excellent</span>
+            </div>
+          </fieldset>
+
+          <fieldset class="options-list">
+            <div class="description">
+              <label for="stall">
+                Was the stall event acceptable?<br>
+                <small>i.e. would you continue to watch longer with with the same stall event pattern?</small>
+              </label>
+            </div>
+            <label for="stall1"><input type="radio" id="stall1" name="stall" value="1">Yes</label>
+            <label for="stall2"><input type="radio" id="stall2" name="stall" value="2">No</label>
+          </fieldset>
+
+          <fieldset class="options-list">
+            <div class="description">
+              <label for="gunfire">Were there any gunfire?</label>
+            </div>
+            <label for="gunfire1"><input type="radio" id="gunfire1" name="gunfire" value="1">Yes</label>
+            <label for="gunfire2"><input type="radio" id="gunfire2" name="gunfire" value="2">No</label>
+          </fieldset>
+          <button type="button" id="submit-survey">Submit</button>
+        </form>
+        <h4>Thanks for participating!</h4>
+      </article>
+    </div>
+
+    <div id="video-container">
+      <video id="video" style="pointer-events: none;" src=""></video>
+      <button class="center" id="play-video">Play Video</button>
+      <button class="center" id="exit-video">Continue</button>
+    </div>
+</body>
+
+</html>

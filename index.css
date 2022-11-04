@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.center {
+  display: block;
+  margin: auto;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+body {
+  font-family: 'Anaheim';
+  font-size: 1.2em;
+}
+h1 {
+  align-self: center;
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+button {
+  background-color: red;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 1em;
+  padding: 5px;
+  text-transform: capitalize;
+}
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 5rem auto;
+  width: 70%;
+}
+fieldset {
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+}
+fieldset > .description {
+  padding: 0.5rem 0;
+}
+fieldset > .description > label {
+  font-weight: bold;
+}
+fieldset > .description > label > small {
+  font-weight: normal;
+}
+fieldset.options-list > label {
+  display: block;
+  padding: 1rem 1rem;
+}
+fieldset.options-list > label:hover {
+  background-color: #EEE;
+}
+fieldset.options-list > label > input[type="radio"] {
+  margin-right: 1rem;
+}
+fieldset.options-range > .row {
+  align-items: center;
+}
+fieldset.options-range > .row > label {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+fieldset.options-range > .row > label:hover {
+  background-color: #EEE;
+}
+fieldset.options-range > .row > label > input[type="radio"] {
+  margin-top: 0.5rem;
+}
+#video-container > video {
+  width: 100%;
+  height: auto;
+}
+#video-container > button {
+  position: relative;
+}
