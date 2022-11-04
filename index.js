@@ -1,7 +1,7 @@
 // change these links later
 // test with shorter video first
 const videoURLList = [
-	'./content/vid.mp4',
+	'./vid.mp4',
 	//'https://survey-webserver-reza.s3.amazonaws.com/QS/GTA_QS.mp4',
 ];
 
