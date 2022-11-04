@@ -1,23 +1,19 @@
 {
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "name": "indexddb",
+  "name": "express",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "devStart": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Reza12121/Indexddb.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Reza12121/Indexddb/issues"
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
   },
-  "homepage": "https://github.com/Reza12121/Indexddb#readme",
-  "description": ""
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
 }
