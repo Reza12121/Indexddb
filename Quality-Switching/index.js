@@ -134,7 +134,6 @@ async function showVideoPlayer(video) {
 	});
 }
 function tryShowVideo(step, videoToPlay) {
-	console.log(step, videoToPlay);
 	if (videoToPlay !== undefined) {
 		if (videoToPlay.blob !== undefined)
 			showVideoPlayer(videoToPlay);
