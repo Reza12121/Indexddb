@@ -745,7 +745,7 @@ const surveyData = [];
 {
 	// set these to correct steps
 	const step = step13;
-	const nextStep = stepSubmit;
+	const nextStep = undefined;
 	const videoToPlay = undefined;
 
 	// form setup
