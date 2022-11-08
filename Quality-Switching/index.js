@@ -319,7 +319,7 @@ const surveyData = [];
 
 	// form setup
 	setupForm(step);
-	addFormContinue("play first video");
+	addFormContinue("continue");
 
 	//
 	const continueButton = step.querySelector(".continue");

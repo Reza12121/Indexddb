@@ -286,16 +286,12 @@ async function submitData(dataObjects) {
 //
 // Steps, Videos, Surveys
 
-const video1 = { url: 'https://survey-webserver-reza.s3.amazonaws.com/QS/GTA_QS.mp4' };
-const video2 = { url: 'https://survey-webserver-reza.s3.amazonaws.com/QS/LOL_QS.mp4' };
-const video3 = { url: 'https://survey-webserver-reza.s3.amazonaws.com/QS/Valorant-QS.mp4' };
-
-//const video1 = { url: 'vid1.mp4' };
-//const video2 = { url: 'vid1.mp4' };
-//const video3 = { url: 'vid1.mp4' };
-const video4 = { url: '' };
-const video5 = { url: '' };
-const video6 = { url: '' };
+const video1 = { url: 'https://survey-webserver-reza.s3.amazonaws.com/SSvLS/Original.mp4' };
+const video2 = { url: 'https://survey-webserver-reza.s3.amazonaws.com/SSvLS/V_1S.mp4' };
+const video3 = { url: 'https://survey-webserver-reza.s3.amazonaws.com/SSvLS/V_3S.mp4' };
+const video4 = { url: 'https://survey-webserver-reza.s3.amazonaws.com/SSvLS/V_6S.mp4' };
+const video5 = { url: 'https://survey-webserver-reza.s3.amazonaws.com/SSvLS/V_6_1S.mp4' };
+const video6 = { url: 'https://survey-webserver-reza.s3.amazonaws.com/SSvLS/V_12s.mp4' };
 const video7 = { url: '' };
 const video8 = { url: '' };
 const video9 = { url: '' };
@@ -319,7 +315,7 @@ const surveyData = [];
 
 	// form setup
 	setupForm(step);
-	addFormContinue("play first video");
+	addFormContinue("Continue");
 
 	//
 	const continueButton = step.querySelector(".continue");
@@ -462,7 +458,7 @@ const surveyData = [];
 		`Did you see the main player to shoot?`,
 		['Yes', 'No']
 	);
-	addFormContinue("submit survey");
+	addFormContinue("continue");
 
 	//
 	hide(step);
@@ -471,13 +467,13 @@ const surveyData = [];
 	continueButton.addEventListener('click', function () {
 		if (continueButton.disabled !== true) {
 			if (validateFormData(step, surveyData)) {
-				continueButton.disabled = true;
-				submitData(surveyData);
-				continueButton.textContent = "Data Sent!";
-				//tryShowVideo(step, videoToPlay)
-				//hide(step);
-				//show(nextStep);
-				//surveyData.push()
+				//continueButton.disabled = true;
+				//submitData(surveyData);
+				//continueButton.textContent = "Data Sent!";
+				tryShowVideo(step, videoToPlay)
+				hide(step);
+				show(nextStep);
+				surveyData.push()
 			}
 		}
 	});
@@ -551,8 +547,8 @@ const surveyData = [];
 {
 	// set these to correct steps
 	const step = step7;
-	const nextStep = step8;
-	const videoToPlay = video7;
+	const nextStep = undefined;
+	const videoToPlay = undefined;
 
 	// form setup
 	setupForm(step, "QS3");
@@ -561,7 +557,7 @@ const surveyData = [];
 		`How was your experience in watching the previous video?`,
 		"Poor", ["1", "2", "3", "4", "5"], "Excellent"
 	);
-	addFormContinue("continue");
+	addFormContinue("Submit Survey");
 
 	//
 	hide(step);
@@ -570,10 +566,13 @@ const surveyData = [];
 	continueButton.addEventListener('click', function () {
 		if (continueButton.disabled !== true) {
 			if (validateFormData(step, surveyData)) {
-				tryShowVideo(step, videoToPlay)
-				hide(step);
-				show(nextStep);
-				surveyData.push()
+				//tryShowVideo(step, videoToPlay)
+				//hide(step);
+				//show(nextStep);
+				//surveyData.push()
+				continueButton.disabled = true;
+				submitData(surveyData);
+				continueButton.textContent = "Data Sent!";
 			}
 		}
 	});
