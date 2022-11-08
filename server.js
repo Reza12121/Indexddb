@@ -1,9 +1,9 @@
 const express = require('express');
 const fs = require('fs');
-const url = require('url');
 const path = require('path');
 
 const app = express();
+app.use(express.json());
 
 const MIME_TYPE = {
     '.css': 'text/css',
@@ -60,6 +60,11 @@ app.get('/*', (req, res) => {
     });
 });
 
-app.listen(80);
+app.post('/submit-data', (req, res) => {
+    console.log('Survey Data:')
+    console.log(req.body);
+    res.end();
+});
+
+app.listen(8080);
 console.log('running!');
-//console.log('deafult dir' + DEFAULT_CONTENT_DIRECTORY)

@@ -25,15 +25,29 @@ button {
   border-radius: 5px;
   border: none;
   color: white;
+  cursor: pointer;
+  display: block;
   font-size: 1em;
+  margin: auto;
+  min-width: 200px;
   padding: 5px;
   text-transform: capitalize;
+}
+button:hover {
+  background-color: lightcoral;
+}
+button:active {
+  background-color: darkred;
+}
+button:disabled {
+  background-color: gray;
 }
 article {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   margin: 5rem auto;
+  max-width: 900px;
   width: 70%;
 }
 fieldset {
@@ -61,6 +75,8 @@ fieldset.options-list > label > input[type="radio"] {
 }
 fieldset.options-range > .row {
   align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 fieldset.options-range > .row > label {
   display: inline-flex;
@@ -74,10 +90,21 @@ fieldset.options-range > .row > label:hover {
 fieldset.options-range > .row > label > input[type="radio"] {
   margin-top: 0.5rem;
 }
-#video-container > video {
-  width: 100%;
+#video-container {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+#video-container video {
+  width: 1920px;
   height: auto;
 }
-#video-container > button {
-  position: relative;
+#video-container button {
+  position: absolute;
+}
+#video-container button {
+  height: 60px;
 }
