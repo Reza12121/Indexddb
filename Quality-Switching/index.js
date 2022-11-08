@@ -1,7 +1,6 @@
 import { addVideoToDatabase, getVideoFromDatabase } from '../indexeddb.js';
 
 function hide(el) {
-	console.log('hiding', el);
 	el.style.display = 'none';
 }
 
@@ -48,7 +47,7 @@ async function queueVideoDownload(video, button) {
 async function downloadVideo(video, button) {
 	const buttonText = button.textContent;
 
-	button.textContent = "loading video (0%)";
+	button.textContent = "Please Wait, Loading Video (0%)";
 	button.disabled = true;
 
 	try {
@@ -72,7 +71,7 @@ async function downloadVideo(video, button) {
 			}
 			chunks.push(value);
 			receivedLength += value.length;
-			button.textContent = `loading video (${toInteger(receivedLength / contentLength * 100)}%)`;
+			button.textContent = `Please Wait, Loading Video (${toInteger(receivedLength / contentLength * 100)}%)`;
 		}
 
 		video.blob = new Blob(chunks, { type: contentType });
