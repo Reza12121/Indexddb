@@ -20,6 +20,10 @@ h1 {
   font-size: 1.5em;
   text-transform: capitalize;
 }
+p {
+  font-size: 120%;
+  line-height: 1.75;
+}
 button {
   background-color: red;
   border-radius: 5px;
