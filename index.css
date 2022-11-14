@@ -94,6 +94,11 @@ fieldset.options-range > .row > label:hover {
 fieldset.options-range > .row > label > input[type="radio"] {
   margin-top: 0.5rem;
 }
+fieldset.options-prompt > .description > label > input {
+  margin-left: 1rem;
+  width: 200px;
+  font-size: 1rem;
+}
 #video-container {
   background-color: black;
   display: flex;
@@ -103,7 +108,8 @@ fieldset.options-range > .row > label > input[type="radio"] {
   height: 100vh;
 }
 #video-container video {
-  width: 1920px;
+  width: 1280px;
+  height: 720px;
   height: auto;
 }
 #video-container button {
@@ -111,4 +117,11 @@ fieldset.options-range > .row > label > input[type="radio"] {
 }
 #video-container button {
   height: 60px;
+}
+#survey-termination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
