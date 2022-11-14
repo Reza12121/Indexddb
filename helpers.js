@@ -1,4 +1,4 @@
-import { addVideoToDatabase, getVideoFromDatabase } from "../indexeddb.js";
+import { addVideoToDatabase, getVideoFromDatabase } from "./indexeddb.js";
 
 export function hide(el) {
   el.style.display = "none";
