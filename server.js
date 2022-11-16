@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const { MongoClient } = require('mongodb');
-const uri = `mongodb://0.0.0.0:27017`;
+const uri = `mongodb://localhost:27017`;
 const client = new MongoClient(uri, {});
 client.connect();
 const collection = client
