@@ -33,7 +33,7 @@ const surveyData = [];
 // Finish the Survey Code
 // continueButton.disabled = true;
 // submitData(surveyData);
-// continueButton.textContent = "Data Sent!";
+// continueButton.textContent = "Thank you for participating!";
 
 // Step 1 - Intro + Video 1
 {
@@ -215,7 +215,7 @@ const surveyData = [];
       if (validateFormData(step, surveyData)) {
         //continueButton.disabled = true;
         //submitData(surveyData);
-        //continueButton.textContent = "Data Sent!";
+        //continueButton.textContent = "Thank you for participating!";
         tryShowVideo(step, videoToPlay);
         hide(step);
         show(nextStep);
@@ -318,7 +318,7 @@ const surveyData = [];
         setEndTime(surveyData);
         continueButton.disabled = true;
         submitData(surveyData, "/submit-ssvsls");
-        continueButton.textContent = "Data Sent!";
+        continueButton.textContent = "Thank you for participating!";
         //tryShowVideo(step, videoToPlay)
         //hide(step);
         //show(nextStep);
@@ -523,7 +523,7 @@ const surveyData = [];
         //
         continueButton.disabled = true;
         submitData(surveyData);
-        continueButton.textContent = "Data Sent!";
+        continueButton.textContent = "Thank you for participating!";
       }
     }
   });

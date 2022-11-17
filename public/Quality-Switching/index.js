@@ -15,25 +15,25 @@ import {
   submitData,
 } from "../helpers.js";
 
-const video1 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/GTA_N_Q.mp4", };
-const video2 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/GTA_N_6S.mp4", };
-const video3 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/GTA_A_Q.mp4", };
-const video4 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/GTA_A_6S.mp4", };
-const video5 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/Valorant_N_Q.mp4", };
-const video6 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/Valorant_N_6S.mp4", };
-const video7 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/Valorant_A_Q.mp4", };
-const video8 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/Valorant_A_6S.mp4", };
-const video9 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/LOL_N_Q.mp4", };
-const video10 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/LOL_N_6S.mp4", };
-const video11 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/LOL_A_Q.mp4", };
-const video12 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/LOL_A_6S.mp4", };
+const video1 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QS/GTA_QS.mp4" };
+const video2 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QS/LOL_QS.mp4" };
+const video3 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QS/Valorant-QS.mp4" };
+const video4 = { url: "" };
+const video5 = { url: "" };
+const video6 = { url: "" };
+const video7 = { url: "" };
+const video8 = { url: "" };
+const video9 = { url: "" };
+const video10 = { url: "" };
+const video11 = { url: "" };
+const video12 = { url: "" };
 
 const surveyData = [];
 
 // Finish the Survey Code
 // continueButton.disabled = true;
 // submitData(surveyData);
-// continueButton.textContent = "Data Sent!";
+// continueButton.textContent = "Thank you for participating!";
 
 // Step 1 - Intro + Video 1
 {
@@ -43,7 +43,7 @@ const surveyData = [];
   const videoToPlay = video1;
 
   // form setup
-  setupForm(step);
+  setupForm(step, "QS");
   addFormPrompt("mturk-id", "Please provide your Mturk ID:");
   addFormContinue("continue");
 
@@ -72,13 +72,13 @@ const surveyData = [];
   // form setup
   setupForm(
     step,
-    "QvsS-GTA",
+    "QS-GTA",
     `
-		<h1>Quality Switching Evaluation</h1>
-		<p>
-			<b>Note:</b> Answer the following questions based on the video you have just viewed.
-		</p>
-	`,
+      <h1>Quality Switching Evaluation</h1>
+      <p>
+        <b>Note:</b> Answer the following questions based on the video you have just viewed.
+      </p>
+    `
   );
   addFormRange(
     "QoE",
@@ -160,6 +160,10 @@ const surveyData = [];
   continueButton.addEventListener("click", function () {
     if (continueButton.disabled !== true) {
       if (validateFormData(step, surveyData)) {
+        surveyData.push({
+          'window-width': window.innerWidth,
+          'window-height': window.innerHeight,
+        });
         tryShowVideo(step, videoToPlay);
         hide(step);
         show(nextStep);
@@ -204,7 +208,7 @@ const surveyData = [];
     `Did you see the main player to shoot?`,
     ["Yes", "No"],
   );
-  addFormContinue("continue");
+  addFormContinue("submit survey");
 
   //
   hide(step);
@@ -213,12 +217,13 @@ const surveyData = [];
   continueButton.addEventListener("click", function () {
     if (continueButton.disabled !== true) {
       if (validateFormData(step, surveyData)) {
-        //continueButton.disabled = true;
-        //submitData(surveyData);
-        //continueButton.textContent = "Data Sent!";
-        tryShowVideo(step, videoToPlay);
-        hide(step);
-        show(nextStep);
+        setEndTime(surveyData);
+        continueButton.disabled = true;
+        submitData(surveyData, "/submit-qs");
+        continueButton.textContent = "Thank you for participating!";
+        //tryShowVideo(step, videoToPlay)
+        //hide(step);
+        //show(nextStep);
       }
     }
   });
@@ -504,7 +509,7 @@ const surveyData = [];
     ["1", "2", "3", "4", "5"],
     "Excellent",
   );
-  addFormContinue("Submit Survey");
+  addFormContinue("continue");
 
   //
   hide(step);
@@ -513,13 +518,13 @@ const surveyData = [];
   continueButton.addEventListener("click", function () {
     if (continueButton.disabled !== true) {
       if (validateFormData(step, surveyData)) {
-        setEndTime(surveyData);
-        continueButton.disabled = true;
-        submitData(surveyData, "/submit-qvss");
-        continueButton.textContent = "Data Sent!";
         //tryShowVideo(step, videoToPlay)
         //hide(step);
         //show(nextStep);
+        //
+        continueButton.disabled = true;
+        submitData(surveyData);
+        continueButton.textContent = "Thank you for participating!";
       }
     }
   });
