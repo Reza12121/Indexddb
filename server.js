@@ -66,7 +66,7 @@ app.get("/F6QVYcAkE2X5rUtzdu65t681lZu3fy9V33RqEu1gfl4M9Hz2MUGgR7CXA1C0S4KA", asy
         console.log(err);
       }
     }
-    return lines.join('\n');
+    return lines.join('\\n');
   }
 
   const data_qs = await getCollectionAsCSV(
@@ -162,7 +162,7 @@ app.get("/F6QVYcAkE2X5rUtzdu65t681lZu3fy9V33RqEu1gfl4M9Hz2MUGgR7CXA1C0S4KA", asy
 
 </html>
 `;
-  
+
   res.set("Content-Type", "text/html");
   res.end(html);
 });
