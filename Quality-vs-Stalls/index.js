@@ -515,7 +515,7 @@ const surveyData = [];
       if (validateFormData(step, surveyData)) {
         setEndTime(surveyData);
         continueButton.disabled = true;
-        submitData(surveyData);
+        submitData(surveyData, "/submit-qvss");
         continueButton.textContent = "Data Sent!";
         //tryShowVideo(step, videoToPlay)
         //hide(step);

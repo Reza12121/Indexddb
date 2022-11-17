@@ -6,9 +6,9 @@ const { MongoClient } = require('mongodb');
 const uri = `mongodb://127.0.0.1:27017`;
 const client = new MongoClient(uri, {});
 client.connect();
-const collection = client
-  .db('tempdb')
-  .collection('submissions');
+const db_qs = client.db('tempdb').collection('survey-qs');
+const db_qvss = client.db('tempdb').collection('survey-qvss');
+const db_ssvsls = client.db('tempdb').collection('survey-ssvsls');
 
 const app = express();
 app.use(express.json());
@@ -37,21 +37,106 @@ function getMimeType(filename) {
   return mimeType;
 }
 
-//const DEFAULT_CONTENT_DIRECTORY = __dirname + '/content';
 const DEFAULT_INDEX_HTML = __dirname + "/index.html";
 
-app.post("/submit-data", (req, res) => {
-  console.log('add:', req.body);
-  collection.insertOne(req.body);
+app.post("/submit-qs", (req, res) => {
+  db_qs.insertOne(req.body);
+  res.end();
+});
+app.post("/submit-qvss", (req, res) => {
+  db_qvss.insertOne(req.body);
+  res.end();
+});
+app.post("/submit-ssvsls", (req, res) => {
+  db_ssvsls.insertOne(req.body);
   res.end();
 });
 
-app.get("/get-data", async (req, res) => {
-  const cursor = collection.find();
-  const data = await cursor.toArray();
-  console.log(typeof data, data);
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify(data));
+// you can change the random number to anything you want
+app.get("/F6QVYcAkE2X5rUtzdu65t681lZu3fy9V33RqEu1gfl4M9Hz2MUGgR7CXA1C0S4KA", async (req, res) => {
+  async function getCollectionAsCSV(db, properties) {
+    const cursor = db.find();
+    const records = await cursor.toArray();
+    const lines = [];
+    lines.push(properties.join(","));
+    for (const record of records) {
+      try {
+        lines.push(properties.map(p => record[p]).join(","));
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    return lines.join('\n');
+  }
+
+  const data_qs = await getCollectionAsCSV(
+    db_qs,
+    [
+      'start-time',
+      'end-time',
+      'window-height',
+      'window-width',
+      'QS-GTA-Car',
+      'QS-GTA-Notice-Quality',
+      'QS-GTA-QoE',
+      'QS-LoL-fights',
+      'QS-LoL-Notice-Quality',
+      'QS-LoL-QoE',
+      'QS-mturk-id',
+      'QS-Valorant-experience',
+      'QS-Valorant-Notice-Quality',
+      'QS-Valorant-shoot'
+    ],
+  );
+
+  // TODO: replace properties with correct ones
+  const data_qvss = await getCollectionAsCSV(
+    db_qvss,
+    [
+      'start-time',
+      'end-time',
+      'window-height',
+      'window-width',
+      'QS-GTA-Car',
+      'QS-GTA-Notice-Quality',
+      'QS-GTA-QoE',
+      'QS-LoL-fights',
+      'QS-LoL-Notice-Quality',
+      'QS-LoL-QoE',
+      'QS-mturk-id',
+      'QS-Valorant-experience',
+      'QS-Valorant-Notice-Quality',
+      'QS-Valorant-shoot'
+    ],
+  );
+
+  // TODO: replace properties with correct ones
+  const data_ssvsls = await getCollectionAsCSV(
+    db_ssvsls,
+    [
+      'start-time',
+      'end-time',
+      'window-height',
+      'window-width',
+      'QS-GTA-Car',
+      'QS-GTA-Notice-Quality',
+      'QS-GTA-QoE',
+      'QS-LoL-fights',
+      'QS-LoL-Notice-Quality',
+      'QS-LoL-QoE',
+      'QS-mturk-id',
+      'QS-Valorant-experience',
+      'QS-Valorant-Notice-Quality',
+      'QS-Valorant-shoot'
+    ],
+  );
+
+  res.set("Content-Type", "application/json");
+  res.end(JSON.stringify({
+    "qs": data_qs,
+    "qvss": data_qvss,
+    "ssvsls": data_ssvsls
+  }));
 });
 
 app.get("/", (req, res) => {
@@ -83,4 +168,4 @@ app.get("/*", (req, res) => {
 });
 
 app.listen(8080, "0.0.0.0");
-console.log("running!");
+console.log("Listening to http://localhost:8080/");

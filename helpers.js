@@ -302,7 +302,7 @@ export function setEndTime(dataStorage) {
 }
 
 let dataSubmitted = false;
-export async function submitData(dataObjects) {
+export async function submitData(dataObjects, endpoint) {
   if (dataSubmitted === false) {
     let finalData = {};
     for (const data of dataObjects) {
@@ -310,7 +310,7 @@ export async function submitData(dataObjects) {
     }
     console.log(finalData);
     // send to server
-    await fetch("/submit-data", {
+    await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

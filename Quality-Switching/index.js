@@ -74,16 +74,12 @@ const surveyData = [];
   const videoToPlay = video2;
 
   // form setup
-  setupForm(
-    step,
-    "QS-GTA",
-    `
+  setupForm(step, "QS-GTA", `
 		<h1>Quality Switching Evaluation</h1>
 		<p>
 			<b>Note:</b> Answer the following questions based on the video you have just viewed.
 		</p>
-	`,
-  );
+	`);
   addFormRange(
     "QoE",
     `How was your experience in watching the previous video?`,
@@ -223,7 +219,7 @@ const surveyData = [];
       if (validateFormData(step, surveyData)) {
         setEndTime(surveyData);
         continueButton.disabled = true;
-        submitData(surveyData);
+        submitData(surveyData, "/submit-qs");
         continueButton.textContent = "Data Sent!";
         //tryShowVideo(step, videoToPlay)
         //hide(step);
