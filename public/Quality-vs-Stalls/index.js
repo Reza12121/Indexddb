@@ -72,9 +72,9 @@ const surveyData = [];
   // form setup
   setupForm(
     step,
-    "QvsS-GTA",
+    "QvS-GTA-normal-quality",
     `
-		<h1>Quality Switching Evaluation</h1>
+		<h1>Quality Switching Evaluation vs Stall Evenets</h1>
 		<p>
 			<b>Note:</b> Answer the following questions based on the video you have just viewed.
 		</p>
@@ -88,14 +88,14 @@ const surveyData = [];
     "Excellent",
   );
   addFormList(
-    "Notice-Quality",
-    `Have you noticed any changes in quality while watching the video?<br>
-		<small>(i.e. When watching, does the quality improve or deteriorate)</small>`,
+    "Quality-Acceptable",
+    `Was the quality acceptable?<br>
+		<small>(i.e. would you continue to watch longer with the current quality?)</small>`,
     ["Yes", "No"],
   );
   addFormList(
-    "Car",
-    `Did you see a car in the video?`,
+    "yellow-plane",
+    `Did you see a yellow plane in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -125,7 +125,7 @@ const surveyData = [];
   // form setup
   setupForm(
     step,
-    "QS-LoL",
+    "QvS-GTA-normal-stall",
     `
 		<h1>Quality of Video</h1>
 		<p>
@@ -141,14 +141,14 @@ const surveyData = [];
     "Excellent",
   );
   addFormList(
-    "Notice-Quality",
-    `Have you noticed any changes in quality while watching the video?<br>
-		<small>(i.e. When watching, does the quality improve or deteriorate)</small>`,
+    "Stall-Acceptable",
+    `Was the stall event (buffering) acceptable?<br>
+		<small>(i.e. would you continue to watch longer with the current stall event?)</small>`,
     ["Yes", "No"],
   );
   addFormList(
-    "fights",
-    `Did you see any fights?`,
+    "yellow-plane",
+    `Did you see a yellow plane in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -178,7 +178,7 @@ const surveyData = [];
   // form setup
   setupForm(
     step,
-    "QS-Valorant",
+    "QvS-GTA-A",
     `
 	<h1>Quality of Video</h1>
 	<p>
@@ -194,14 +194,14 @@ const surveyData = [];
     "Excellent",
   );
   addFormList(
-    "Notice-Quality",
-    `Have you noticed any changes in quality while watching the video?<br>
-		<small>(i.e. When watching, does the quality improve or deteriorate)</small>`,
+    "Quality-acceptable",
+    `Was the quality acceptable?<br>
+		<small>(i.e. would you continue to watch longer with the current quality?)</small>`,
     ["Yes", "No"],
   );
   addFormList(
-    "shoot",
-    `Did you see the main player to shoot?`,
+    "car",
+    `Did you see a car in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -232,13 +232,24 @@ const surveyData = [];
   const videoToPlay = video5;
 
   // form setup
-  setupForm(step, "QS3");
+  setupForm(step, "QvS-GTA-Action-Stall");
   addFormRange(
-    "experience",
+    "QoE",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
     "Excellent",
+  );
+  addFormList(
+    "stall-acceptable,
+    `Was the stall event acceptable??<br>
+		<small>(i.e. would you continue to watch longer with the current stall event?)</small>`,
+    ["Yes", "No"],
+  );
+  addFormList(
+    "car",
+    `Did you see a car in the video?`,
+    ["Yes", "No"],
   );
   addFormContinue("continue");
 
@@ -265,9 +276,9 @@ const surveyData = [];
   const videoToPlay = video6;
 
   // form setup
-  setupForm(step, "QS3");
+  setupForm(step, "QvS-Valorant-Normal-Quality");
   addFormRange(
-    "experience",
+    "QoE",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
