@@ -187,7 +187,7 @@ const surveyData = [];
 	`,
   );
   addFormRange(
-    "experience",
+    "QoE",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
@@ -241,8 +241,8 @@ const surveyData = [];
     "Excellent",
   );
   addFormList(
-    "stall-acceptable,
-    `Was the stall event acceptable??<br>
+    "Stall-Acceptable,
+    `Was the stall event (buffering) acceptable??<br>
 		<small>(i.e. would you continue to watch longer with the current stall event?)</small>`,
     ["Yes", "No"],
   );
@@ -284,8 +284,18 @@ const surveyData = [];
     ["1", "2", "3", "4", "5"],
     "Excellent",
   );
+  addFormList(
+    "Quality-Acceptable",
+    `Was the quality acceptable?<br>
+		<small>(i.e. would you continue to watch longer with the current quality?)</small>`,
+    ["Yes", "No"],
+  );
+  addFormList(
+    "Shoot",
+    `Did the main player shoot??`,
+    ["Yes", "No"],
+  );
   addFormContinue("continue");
-
   //
   hide(step);
   const continueButton = step.querySelector(".continue");
@@ -309,13 +319,24 @@ const surveyData = [];
   const videoToPlay = video7;
 
   // form setup
-  setupForm(step, "QS3");
+  setupForm(step, "QvS-Valorant-Normal-Stall");
   addFormRange(
     "experience",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
     "Excellent",
+  );
+  addFormList(
+    "Stall-Acceptable",
+    `Was the stall event (buffering) acceptable?<br>
+		<small>(i.e. would you continue to watch longer with the current stall?)</small>`,
+    ["Yes", "No"],
+  );
+  addFormList(
+    "shoot",
+    `Did the main player shoot?`,
+    ["Yes", "No"],
   );
   addFormContinue("continue");
 
@@ -342,13 +363,24 @@ const surveyData = [];
   const videoToPlay = video8;
 
   // form setup
-  setupForm(step, "QS3");
+  setupForm(step, "QvS-Valorant-Action-Quality");
   addFormRange(
-    "experience",
+    "QoE",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
     "Excellent",
+  );
+  addFormList(
+    "Quality-Acceptable",
+    `Was the quality acceptable?<br>
+		<small>(i.e. would you continue to watch longer with the current quality?)</small>`,
+    ["Yes", "No"],
+  );
+  addFormList(
+    "Shoot",
+    `Did the main player shoot??`,
+    ["Yes", "No"],
   );
   addFormContinue("continue");
 
@@ -375,13 +407,24 @@ const surveyData = [];
   const videoToPlay = video9;
 
   // form setup
-  setupForm(step, "QS3");
+  setupForm(step, "QvS-Valorant-Action-Stall");
   addFormRange(
     "experience",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
     "Excellent",
+  );
+  addFormList(
+    "Stall-Acceptable",
+    `Was the stall event (buffering) acceptable?<br>
+		<small>(i.e. would you continue to watch longer with the current stall?)</small>`,
+    ["Yes", "No"],
+  );
+  addFormList(
+    "shoot",
+    `Did the main player shoot?`,
+    ["Yes", "No"],
   );
   addFormContinue("continue");
 
@@ -408,13 +451,24 @@ const surveyData = [];
   const videoToPlay = video10;
 
   // form setup
-  setupForm(step, "QS3");
+  setupForm(step, "QvS-LOL-Normal-Quality");
   addFormRange(
     "experience",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
     "Excellent",
+  );
+  addFormList(
+    "Quality-Acceptable",
+    `Was the quality acceptable?<br>
+		<small>(i.e. would you continue to watch longer with the current quality?)</small>`,
+    ["Yes", "No"],
+  );
+  addFormList(
+    "Shoot",
+    `Did you see any fights?`,
+    ["Yes", "No"],
   );
   addFormContinue("continue");
 
@@ -441,7 +495,7 @@ const surveyData = [];
   const videoToPlay = video11;
 
   // form setup
-  setupForm(step, "QS3");
+  setupForm(step, "QvS-LoL-Normal-Stall");
   addFormRange(
     "experience",
     `How was your experience in watching the previous video?`,
@@ -449,6 +503,18 @@ const surveyData = [];
     ["1", "2", "3", "4", "5"],
     "Excellent",
   );
+  addFormList(
+    "Stall-Acceptable",
+    `Was the stall event (buffering) acceptable?<br>
+		<small>(i.e. would you continue to watch longer with the current stall?)</small>`,
+    ["Yes", "No"],
+  );
+  addFormList(
+    "shoot",
+    `Did you see any fights?`,
+    ["Yes", "No"],
+  );
+	
   addFormContinue("continue");
 
   //
@@ -474,13 +540,24 @@ const surveyData = [];
   const videoToPlay = video12;
 
   // form setup
-  setupForm(step, "QS3");
+  setupForm(step, "QvS-LOL-Action-Quality");
   addFormRange(
     "experience",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
     "Excellent",
+  );
+  addFormList(
+    "Quality-Acceptable",
+    `Was the quality acceptable?<br>
+		<small>(i.e. would you continue to watch longer with the current quality?)</small>`,
+    ["Yes", "No"],
+  );
+  addFormList(
+    "Shoot",
+    `Did you see any fights?`,
+    ["Yes", "No"],
   );
   addFormContinue("continue");
 
@@ -507,13 +584,24 @@ const surveyData = [];
   const videoToPlay = undefined;
 
   // form setup
-  setupForm(step, "QS3");
+  setupForm(step, "QvS-LoL-Action-Stall");
   addFormRange(
     "experience",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
     "Excellent",
+  );
+  addFormList(
+    "Stall-Acceptable",
+    `Was the stall event (buffering) acceptable?<br>
+		<small>(i.e. would you continue to watch longer with the current stall?)</small>`,
+    ["Yes", "No"],
+  );
+  addFormList(
+    "shoot",
+    `Did you see any fights?`,
+    ["Yes", "No"],
   );
   addFormContinue("Submit Survey");
 
