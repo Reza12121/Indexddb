@@ -52,7 +52,7 @@ app.post("/submit-ssvsls", (req, res) => {
   res.end();
 });
 
-// you can change the random number to anything you want
+// TODO: change the url to something random once everything is working perfectly
 app.get("/F6QVYcAkE2X5rUtzdu65t681lZu3fy9V33RqEu1gfl4M9Hz2MUGgR7CXA1C0S4KA", async (req, res) => {
   async function getCollectionAsCSV(db, properties) {
     const cursor = db.find();
@@ -89,7 +89,6 @@ app.get("/F6QVYcAkE2X5rUtzdu65t681lZu3fy9V33RqEu1gfl4M9Hz2MUGgR7CXA1C0S4KA", asy
     ],
   );
 
-  // TODO: replace properties with correct ones
   const data_qvss = await getCollectionAsCSV(
     db_qvss,
     [
@@ -137,7 +136,6 @@ app.get("/F6QVYcAkE2X5rUtzdu65t681lZu3fy9V33RqEu1gfl4M9Hz2MUGgR7CXA1C0S4KA", asy
     ],
   );
 
-  // TODO: replace properties with correct ones
   const data_ssvsls = await getCollectionAsCSV(
     db_ssvsls,
     [
