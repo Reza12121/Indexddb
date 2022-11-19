@@ -277,6 +277,17 @@ export function addFormRange(fieldName, message, textL, choices, textR) {
   formInfo.element.innerHTML += HTML;
 }
 
+export function addFormPromptForID() {
+  let HTML = `
+  <fieldset class="options-prompt" name="mturk-id">
+    <div class="description">
+      <label for="mturk-id">Please provide your Mturk ID:<input type="text" name="mturk-id"></input></label>
+    </div>
+  </fieldset>
+`;
+  formInfo.element.innerHTML += HTML;
+}
+
 export function addFormPrompt(fieldName, message) {
   let HTML = `
 		<fieldset class="options-prompt" name="${formInfo.groupName}-${fieldName}">
