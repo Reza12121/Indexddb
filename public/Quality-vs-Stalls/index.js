@@ -2,17 +2,18 @@ import {
   addFormContinue,
   addFormList,
   addFormPrompt,
+  addFormPromptForID,
   addFormRange,
   downloadAllVideos,
   hide,
   queueVideoDownload,
+  setEndTime,
+  setStartTime,
   setupForm,
   show,
-  validateFormData,
-  setStartTime,
-  setEndTime,
-  tryShowVideo,
   submitData,
+  tryShowVideo,
+  validateFormData,
 } from "../helpers.js";
 
 const video1 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/GTA_N_Q.mp4", };
@@ -30,21 +31,15 @@ const video12 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/LOL
 
 const surveyData = [];
 
-// Finish the Survey Code
-// continueButton.disabled = true;
-// submitData(surveyData);
-// continueButton.textContent = "Thank you for participating!";
-
 // Step 1 - Intro + Video 1
 {
-  // set these to correct steps
   const step = step1;
   const nextStep = step2;
   const videoToPlay = video1;
 
   // form setup
   setupForm(step);
-  addFormPrompt("mturk-id", "Please provide your Mturk ID:");
+  addFormPromptForID();
   addFormContinue("continue");
 
   //
@@ -64,7 +59,6 @@ const surveyData = [];
 
 // Step 2 - Video 1 Survey + Video 2
 {
-  // set these to correct steps
   const step = step2;
   const nextStep = step3;
   const videoToPlay = video2;
@@ -72,7 +66,7 @@ const surveyData = [];
   // form setup
   setupForm(
     step,
-    "QvS-GTA-normal-quality",
+    "QvS-GTA-Normal-Quality",
     `
 		<h1>Quality Switching Evaluation vs Stall Evenets</h1>
 		<p>
@@ -94,7 +88,7 @@ const surveyData = [];
     ["Yes", "No"],
   );
   addFormList(
-    "yellow-plane",
+    "Yellow-Plane",
     `Did you see a yellow plane in the video?`,
     ["Yes", "No"],
   );
@@ -117,7 +111,6 @@ const surveyData = [];
 
 // Step 3 - Video 2 Survey + Video 3
 {
-  // set these to correct steps
   const step = step3;
   const nextStep = step4;
   const videoToPlay = video3;
@@ -125,7 +118,7 @@ const surveyData = [];
   // form setup
   setupForm(
     step,
-    "QvS-GTA-normal-stall",
+    "QvS-GTA-Normal-Stall",
     `
 		<h1>Quality of Video</h1>
 		<p>
@@ -147,7 +140,7 @@ const surveyData = [];
     ["Yes", "No"],
   );
   addFormList(
-    "yellow-plane",
+    "Yellow-Plane",
     `Did you see a yellow plane in the video?`,
     ["Yes", "No"],
   );
@@ -160,6 +153,10 @@ const surveyData = [];
   continueButton.addEventListener("click", function () {
     if (continueButton.disabled !== true) {
       if (validateFormData(step, surveyData)) {
+        surveyData.push({
+          'window-width': window.innerWidth,
+          'window-height': window.innerHeight,
+        });
         tryShowVideo(step, videoToPlay);
         hide(step);
         show(nextStep);
@@ -170,7 +167,6 @@ const surveyData = [];
 
 // Step 4 - Video 3 Survey + Video 4 or Finish
 {
-  // set these to correct steps
   const step = step4;
   const nextStep = step5;
   const videoToPlay = video4;
@@ -200,7 +196,7 @@ const surveyData = [];
     ["Yes", "No"],
   );
   addFormList(
-    "car",
+    "Car",
     `Did you see a car in the video?`,
     ["Yes", "No"],
   );
@@ -213,9 +209,6 @@ const surveyData = [];
   continueButton.addEventListener("click", function () {
     if (continueButton.disabled !== true) {
       if (validateFormData(step, surveyData)) {
-        //continueButton.disabled = true;
-        //submitData(surveyData);
-        //continueButton.textContent = "Thank you for participating!";
         tryShowVideo(step, videoToPlay);
         hide(step);
         show(nextStep);
@@ -226,7 +219,6 @@ const surveyData = [];
 
 // Step 5
 {
-  // set these to correct steps
   const step = step5;
   const nextStep = step6;
   const videoToPlay = video5;
@@ -241,13 +233,13 @@ const surveyData = [];
     "Excellent",
   );
   addFormList(
-    "Stall-Acceptable,
+    "Stall-Acceptable",
     `Was the stall event (buffering) acceptable??<br>
 		<small>(i.e. would you continue to watch longer with the current stall event?)</small>`,
     ["Yes", "No"],
   );
   addFormList(
-    "car",
+    "Car",
     `Did you see a car in the video?`,
     ["Yes", "No"],
   );
@@ -270,7 +262,6 @@ const surveyData = [];
 
 // Step 6
 {
-  // set these to correct steps
   const step = step6;
   const nextStep = step7;
   const videoToPlay = video6;
@@ -313,7 +304,6 @@ const surveyData = [];
 
 // Step 7
 {
-  // set these to correct steps
   const step = step7;
   const nextStep = step8;
   const videoToPlay = video7;
@@ -321,7 +311,7 @@ const surveyData = [];
   // form setup
   setupForm(step, "QvS-Valorant-Normal-Stall");
   addFormRange(
-    "experience",
+    "QoE",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
@@ -334,7 +324,7 @@ const surveyData = [];
     ["Yes", "No"],
   );
   addFormList(
-    "shoot",
+    "Shoot",
     `Did the main player shoot?`,
     ["Yes", "No"],
   );
@@ -357,7 +347,6 @@ const surveyData = [];
 
 // Step 8
 {
-  // set these to correct steps
   const step = step8;
   const nextStep = step9;
   const videoToPlay = video8;
@@ -401,7 +390,6 @@ const surveyData = [];
 
 // Step 9
 {
-  // set these to correct steps
   const step = step9;
   const nextStep = step10;
   const videoToPlay = video9;
@@ -409,7 +397,7 @@ const surveyData = [];
   // form setup
   setupForm(step, "QvS-Valorant-Action-Stall");
   addFormRange(
-    "experience",
+    "QoE",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
@@ -422,7 +410,7 @@ const surveyData = [];
     ["Yes", "No"],
   );
   addFormList(
-    "shoot",
+    "Shoot",
     `Did the main player shoot?`,
     ["Yes", "No"],
   );
@@ -445,7 +433,6 @@ const surveyData = [];
 
 // Step 10
 {
-  // set these to correct steps
   const step = step10;
   const nextStep = step11;
   const videoToPlay = video10;
@@ -453,7 +440,7 @@ const surveyData = [];
   // form setup
   setupForm(step, "QvS-LOL-Normal-Quality");
   addFormRange(
-    "experience",
+    "QoE",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
@@ -489,7 +476,6 @@ const surveyData = [];
 
 // Step 11
 {
-  // set these to correct steps
   const step = step11;
   const nextStep = step12;
   const videoToPlay = video11;
@@ -497,7 +483,7 @@ const surveyData = [];
   // form setup
   setupForm(step, "QvS-LoL-Normal-Stall");
   addFormRange(
-    "experience",
+    "QoE",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
@@ -510,7 +496,7 @@ const surveyData = [];
     ["Yes", "No"],
   );
   addFormList(
-    "shoot",
+    "Shoot",
     `Did you see any fights?`,
     ["Yes", "No"],
   );
@@ -534,7 +520,6 @@ const surveyData = [];
 
 // Step 12
 {
-  // set these to correct steps
   const step = step12;
   const nextStep = step13;
   const videoToPlay = video12;
@@ -542,7 +527,7 @@ const surveyData = [];
   // form setup
   setupForm(step, "QvS-LOL-Action-Quality");
   addFormRange(
-    "experience",
+    "QoE",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
@@ -578,15 +563,12 @@ const surveyData = [];
 
 // Step 13
 {
-  // set these to correct steps
   const step = step13;
-  const nextStep = undefined;
-  const videoToPlay = undefined;
 
   // form setup
   setupForm(step, "QvS-LoL-Action-Stall");
   addFormRange(
-    "experience",
+    "QoE",
     `How was your experience in watching the previous video?`,
     "Poor",
     ["1", "2", "3", "4", "5"],
@@ -599,7 +581,7 @@ const surveyData = [];
     ["Yes", "No"],
   );
   addFormList(
-    "shoot",
+    "Shoot",
     `Did you see any fights?`,
     ["Yes", "No"],
   );
@@ -608,7 +590,6 @@ const surveyData = [];
   //
   hide(step);
   const continueButton = step.querySelector(".continue");
-  if (videoToPlay) queueVideoDownload(videoToPlay, continueButton);
   continueButton.addEventListener("click", function () {
     if (continueButton.disabled !== true) {
       if (validateFormData(step, surveyData)) {
@@ -616,9 +597,6 @@ const surveyData = [];
         continueButton.disabled = true;
         submitData(surveyData, "/submit-qvss");
         continueButton.textContent = "Thank you for participating!";
-        //tryShowVideo(step, videoToPlay)
-        //hide(step);
-        //show(nextStep);
       }
     }
   });
