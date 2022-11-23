@@ -210,8 +210,6 @@ const surveyData = [];
         continueButton.disabled = true;
         submitData(surveyData, "/submit-qs");
         continueButton.textContent = "Thank you for participating!";
-	      let uuid = self.crypto.randomUUID();
-console.log(uuid); // for example "36b8f84d-df4e-4d49-b662-bcde71a8764f"
       }
     }
   });
