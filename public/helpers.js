@@ -312,6 +312,20 @@ export function setEndTime(dataStorage) {
   dataStorage.push({ "end-time": new Date() });
 }
 
+// generates a uuid and shows it on the screen
+function generateUUID() {
+  hide(surveyContainer);
+  const randomUUID = self.crypto.randomUUID();
+  const pElement = document.createElement("p");
+  pElement.innerHTML = `
+    Please use this code to redeem your reward:
+    <br>
+    <span style="color:red">${randomUUID}</style>
+  `;
+  pElement.style.textAlign = "center";
+  document.body.append(pElement);
+}
+
 let dataSubmitted = false;
 export async function submitData(dataObjects, endpoint) {
   if (dataSubmitted === false) {
@@ -321,13 +335,17 @@ export async function submitData(dataObjects, endpoint) {
     }
     console.log(finalData);
     // send to server
-    await fetch(endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(finalData),
-    });
-    dataSubmitted = true;
+    try {
+      await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(finalData),
+      });
+      dataSubmitted = true;
+      generateUUID();
+    } catch (err) {
+    }
   }
 }
