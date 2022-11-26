@@ -318,7 +318,7 @@ function generateUUID() {
   const randomUUID = self.crypto.randomUUID();
   const pElement = document.createElement("p");
   pElement.innerHTML = `
-    Please use this code to redeem your reward:
+    Thank you for your participation. Please use this code to redeem your reward:
     <br>
     <span style="color:red">${randomUUID}</style>
   `;
