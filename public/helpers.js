@@ -316,7 +316,6 @@ export function setEndTime(dataStorage) {
 function generateUUID() {
   hide(surveyContainer);
   const randomUUID = self.crypto.randomUUID();
-	console.log
   const pElement = document.createElement("p");
   pElement.innerHTML = `
     Thank you for your participation. Please use this code to redeem your reward:
