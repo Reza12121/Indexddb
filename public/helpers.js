@@ -319,7 +319,7 @@ function generateUUID(uuid) {
   pElement.innerHTML = `
     Thank you for your participation. Please use this code to redeem your reward:
     <br>
-    <span style="color:red">${randomUUID}</style>
+    <span style="color:red">${uuid}</style>
   `;
   pElement.style.textAlign = "center";
   document.body.append(pElement);
