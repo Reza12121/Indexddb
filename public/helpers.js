@@ -336,7 +336,7 @@ export async function submitData(dataObjects, endpoint) {
     console.log(finalData);
     // send to server
     try {
-      const reponse = await fetch(endpoint, { 
+      const reponses = await fetch(endpoint, { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
