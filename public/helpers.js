@@ -336,13 +336,15 @@ export async function submitData(dataObjects, endpoint) {
     console.log(finalData);
     // send to server
     try {
-      await fetch(endpoint, {
+      const reponse = await fetch(endpoint, { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(finalData),
       });
+	    const data = await response.json();
+	    console.log(data)
       dataSubmitted = true;
       generateUUID();
     } catch (err) {
