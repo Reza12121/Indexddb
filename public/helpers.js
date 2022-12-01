@@ -345,7 +345,7 @@ export async function submitData(dataObjects, endpoint) {
 	    const data = await response.json();
 	    console.log(data)
       dataSubmitted = true;
-      generateUUID();
+      generateUUID(uuid);
     } catch (err) {
 	    console.log(err);
     }
