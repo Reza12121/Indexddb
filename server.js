@@ -41,16 +41,12 @@ function getMimeType(filename) {
 const DEFAULT_INDEX_HTML = __dirname + "/public/index.html";
 
 app.post("/submit-qs", (req, res) => {
+  const uuid = // make a new uuid
+  req.body.uuid = uuid; // add an uuid propertoy to req.body
   db_qs.insertOne(req.body);
-  res.end();
-});
-app.post("/submit-qvss", (req, res) => {
-  db_qvss.insertOne(req.body);
-  res.end();
-});
-app.post("/submit-ssvsls", (req, res) => {
-  db_ssvsls.insertOne(req.body);
-  res.end();
+  res.send(req.body);
+  // or if you only want to send back the uuid
+  // res.send({uuid});
 });
 
 // TODO: change the url to something random once everything is working perfectly
