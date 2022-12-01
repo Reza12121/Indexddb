@@ -45,6 +45,7 @@ app.post("/submit-qs", async (req, res) => {
     const uuid = crypto.randomUUID();
     req.body.uuid = uuid; // add an uuid propertoy to req.body
     const response = await db_qs.insertOne(req.body);
+    response.uuid = uuid
     res.send(response);
     // or if you only want to send back the uuid
     // res.send({uuid});
