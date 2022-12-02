@@ -16,18 +16,18 @@ import {
   validateFormData,
 } from "../helpers.js";
 
-const video1 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/GTA_N_Q.mp4", };
-const video2 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/GTA_N_6S.mp4", };
-const video3 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/GTA_A_Q.mp4", };
-const video4 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/GTA_A_6S.mp4", };
-const video5 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/Valorant_N_Q.mp4", };
-const video6 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/Valorant_N_6S.mp4", };
-const video7 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/Valorant_A_Q.mp4", };
-const video8 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/Valorant_A_6S.mp4", };
-const video9 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/LOL_N_Q.mp4", };
-const video10 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/LOL_N_6S.mp4", };
-const video11 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/Q/LOL_A_Q.mp4", };
-const video12 = { url: "https://survey-webserver-reza.s3.amazonaws.com/QvS/S/LOL_A_6S.mp4", };
+const video1 = { url: "", };
+const video2 = { url: "", };
+const video3 = { url: "", };
+const video4 = { url: "", };
+const video5 = { url: "", };
+const video6 = { url: "", };
+const video7 = { url: "" };
+const video8 = { url: "" };
+const video9 = { url: "" };
+const video10 = { url: "" };
+const video11 = { url: "" };
+const video12 = { url: "" };
 
 const surveyData = [];
 
