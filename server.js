@@ -162,6 +162,7 @@ app.get("/F6QVYcAkE2X5rUtzdu65t681lZu3fy9V33RqEu1gfl4M9Hz2MUGgR7CXA1C0S4KA", asy
       "QvS-LoL-Action-Stall-QoE",
       "QvS-LoL-Action-Stall-Stall-Acceptable",
       "QvS-LoL-Action-Stall-Shoot",
+      "uuid",
     ],
   );
 
@@ -190,6 +191,7 @@ app.get("/F6QVYcAkE2X5rUtzdu65t681lZu3fy9V33RqEu1gfl4M9Hz2MUGgR7CXA1C0S4KA", asy
       "12s-QoE",
       "12s-Stall-Acceptable",
       "12s-Shoot",
+      "uuid",
     ],
   );
 
