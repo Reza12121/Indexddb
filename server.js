@@ -113,7 +113,8 @@ app.get("/F6QVYcAkE2X5rUtzdu65t681lZu3fy9V33RqEu1gfl4M9Hz2MUGgR7CXA1C0S4KA", asy
       'QS-LoL-Fights',
       'QS-Valorant-QoE',
       'QS-Valorant-Notice-Quality',
-      'QS-Valorant-Shoot'
+      'QS-Valorant-Shoot',
+      'uuid',
     ],
   );
 
