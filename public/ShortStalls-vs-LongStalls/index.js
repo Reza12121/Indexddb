@@ -16,12 +16,12 @@ import {
   validateFormData,
 } from "../helpers.js";
 
-const video1 = { url: "", };
-const video2 = { url: "", };
-const video3 = { url: "", };
-const video4 = { url: "", };
-const video5 = { url: "", };
-const video6 = { url: "", };
+const video1 = { url: "https://survey-webserver-reza.s3.amazonaws.com/SSvLS/Original.mp4", };
+const video2 = { url: "https://survey-webserver-reza.s3.amazonaws.com/SSvLS/V_1S.mp4", };
+const video3 = { url: "https://survey-webserver-reza.s3.amazonaws.com/SSvLS/V_3S.mp4", };
+const video4 = { url: "https://survey-webserver-reza.s3.amazonaws.com/SSvLS/V_6S.mp4", };
+const video5 = { url: "https://survey-webserver-reza.s3.amazonaws.com/SSvLS/V_6_1S.mp4", };
+const video6 = { url: "https://survey-webserver-reza.s3.amazonaws.com/SSvLS/V_12s.mp4", };
 const video7 = { url: "" };
 const video8 = { url: "" };
 const video9 = { url: "" };
