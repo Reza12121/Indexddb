@@ -53,13 +53,31 @@ app.post("/submit-qs", async (req, res) => {
   res.status(500).send({message: "something went wrong"});
   }
 });
-app.post("/submit-qvss", (req, res) => {
-  db_qvss.insertOne(req.body);
-  res.end();
+app.post("/submit-qvss", async (req, res) => {
+  try {
+    const uuid = crypto.randomUUID();
+    req.body.uuid = uuid; // add an uuid propertoy to req.body
+    const response = await db_qvss.insertOne(req.body);
+    response.uuid = uuid
+    res.send(response);
+    // or if you only want to send back the uuid
+    // res.send({uuid});
+  } catch (err) {
+  res.status(500).send({message: "something went wrong"});
+  }
 });
-app.post("/submit-ssvsls", (req, res) => {
-  db_ssvsls.insertOne(req.body);
-  res.end();
+app.post("/submit-ssvsls", async (req, res) => {
+  try {
+    const uuid = crypto.randomUUID();
+    req.body.uuid = uuid; // add an uuid propertoy to req.body
+    const response = await db_ssvsls.insertOne(req.body);
+    response.uuid = uuid
+    res.send(response);
+    // or if you only want to send back the uuid
+    // res.send({uuid});
+  } catch (err) {
+  res.status(500).send({message: "something went wrong"});
+  }
 });
 
 // TODO: change the url to something random once everything is working perfectly
