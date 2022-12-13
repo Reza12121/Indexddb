@@ -141,7 +141,7 @@ const surveyData = [];
   );
   addFormList(
     "Fights",
-    `Did you see any fights?`,
+    `Did the blue player died?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -195,7 +195,7 @@ const surveyData = [];
   );
   addFormList(
     "Shoot",
-    `Did you see the main player to shoot?`,
+    `Did you see a car in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("submit survey");
