@@ -89,7 +89,7 @@ const surveyData = [];
   );
   addFormList(
     "Yellow-Plane",
-    `Did you see a yellow plane in the video?`,
+    `Did you see any car?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -197,7 +197,7 @@ const surveyData = [];
   );
   addFormList(
     "Car",
-    `Did you see a car in the video?`,
+    `Did you see a dog in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -240,7 +240,7 @@ const surveyData = [];
   );
   addFormList(
     "Car",
-    `Did you see a car in the video?`,
+    `Did you see a cat in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -283,7 +283,7 @@ const surveyData = [];
   );
   addFormList(
     "Shoot",
-    `Did the main player shoot??`,
+    `Did you see a cat in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -325,7 +325,7 @@ const surveyData = [];
   );
   addFormList(
     "Shoot",
-    `Did the main player shoot?`,
+    `Did you see a dog in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -368,7 +368,7 @@ const surveyData = [];
   );
   addFormList(
     "Shoot",
-    `Did the main player shoot??`,
+    `Did you see an airplane in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -454,7 +454,7 @@ const surveyData = [];
   );
   addFormList(
     "Shoot",
-    `Did you see any fights?`,
+    `Did you see a cat in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -497,7 +497,7 @@ const surveyData = [];
   );
   addFormList(
     "Shoot",
-    `Did you see any fights?`,
+    `Did you see a car in the video?`,
     ["Yes", "No"],
   );
 	
