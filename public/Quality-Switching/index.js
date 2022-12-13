@@ -141,7 +141,7 @@ const surveyData = [];
   );
   addFormList(
     "Fights",
-    `Did the blue player died?`,
+    `Did the blue player die?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
