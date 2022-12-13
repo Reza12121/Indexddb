@@ -83,7 +83,7 @@ const surveyData = [];
   );
   addFormList(
     "Shoot",
-    `Did the main player shoot the gun during the video?`,
+    `Did you see a car in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -135,7 +135,7 @@ const surveyData = [];
   );
   addFormList(
     "Shoot",
-    `Did the main player shoot the gun during the video?`,
+    `Did you see a cat in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -191,7 +191,7 @@ const surveyData = [];
   );
   addFormList(
     "Shoot",
-    `Did the main player shoot the gun during the video?`,
+    `Did you see an airplane in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -234,7 +234,7 @@ const surveyData = [];
   );
   addFormList(
     "Shoot",
-    `Did the main player shoot the gun during the video?`,
+    `Did you see a person flying?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
@@ -277,7 +277,7 @@ const surveyData = [];
   );
   addFormList(
     "Shoot",
-    `Did the main player shoot the gun during the video?`,
+    `Did you see a dog in the video?`,
     ["Yes", "No"],
   );
   addFormContinue("continue");
